@@ -302,10 +302,12 @@ h1 {
 
     // Função que garante que a página inicial será carregada primeiro
     window.addEventListener('load', () => {
-      if (localStorage.getItem('nomeUsuario')) {
-        mostrarPagina(3);  // Se o nome foi salvo, vai direto para a página de Aulas
+      const nomeUsuario = localStorage.getItem('nomeUsuario');
+      
+      if (!nomeUsuario) {
+        mostrarPagina(1);  // Se o nome não foi salvo, exibe a página 1 (Cadastro)
       } else {
-        mostrarPagina(1);  // Caso contrário, mantém na página 1
+        mostrarPagina(3);  // Se o nome foi salvo, vai direto para a página de Aulas
       }
     });
 
