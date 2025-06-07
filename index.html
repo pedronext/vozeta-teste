@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>VOZETA - Inclusão na Programação</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background: #0b3d0b; /* verde escuro */
+      color: #f0f0f0;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+    }
+
+    main {
+      max-width: 750px;
+      margin: auto;
+      padding: 30px;
+      background: #1c5d1c;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000066;
+    }
+
+    h1, h2 {
+      color: #ffffff;
+    }
+
+    button {
+      background-color: #d9f99d;
+      color: #1c3a1c;
+      padding: 12px 24px;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c2f261;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #e8f5e9;
+      color: #222;
+    }
+
+    textarea {
+      height: 200px;
+      resize: vertical;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      background: white;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    /* Centralização do conteúdo */
+    .centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Estilo dos controles de fonte */
+    .font-controls {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Página 1: Introdução -->
+    <section id="pagina1" class="active">
+      <h1>Bem-vindo ao VOZETA</h1>
+      <p>O <strong>VOZETA</strong> é um site revolucionário que ensina HTML, CSS e JavaScript com máxima inclusão. Aqui, qualquer pessoa — com ou sem dificuldades — pode aprender a programar.</p>
+      
+      <!-- Controles de aumento e diminuição de fonte -->
+      <div class="font-controls centered">
+        <button onclick="alterarFonte('aumentar')">Aumentar Fonte</button>
+        <button onclick="alterarFonte('diminuir')">Diminuir Fonte</button>
+      </div>
+
+      <button onclick="mostrarPagina(2)">Começar</button>
+    </section>
+
+    <!-- Página 2: Cadastro -->
+    <section id="pagina2">
+      <h1>Cadastro</h1>
+      <p>Digite seu nome para começarmos sua jornada:</p>
+      <input type="text" id="nome" placeholder="Seu nome" />
+      <button onclick="salvarNome()">Avançar</button>
+    </section>
+
+    <!-- Página 3: Aulas -->
+    <section id="pagina3">
+      <h1>Aulas Introdutórias</h1>
+      
+      <div>
+        <h2>O que é HTML?</h2>
+        <p>HTML é a linguagem de marcação usada para estruturar conteúdos na web. Ele define títulos, parágrafos, links e muito mais.</p>
+        <h3>Exemplo de Código:</h3>
+        <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Meu primeiro site&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao meu site!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo de texto.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+        </pre>
+      </div>
+
+      <div>
+        <h2>O que é CSS?</h2>
+        <p>CSS é o que usamos para deixar os sites bonitos: cores, tamanhos, posicionamentos e estilos.</p>
+        <h3>Exemplo de Código:</h3>
+        <pre>
+<code>
+/* CSS para mudar a cor do fundo */
+body {
+  background-color: #f0f0f0;
+}
+
+/* CSS para centralizar um título */
+h1 {
+  text-align: center;
+}
+</code>
+        </pre>
+      </div>
+
+      <div>
+        <h2>O que é JavaScript?</h2>
+        <p>JavaScript dá vida ao seu site. Com ele, podemos fazer animações, interações e lógica.</p>
+        <h3>Exemplo de Código:</h3>
+        <pre>
+<code>
+&lt;button onclick="alert('Olá, mundo!')"&gt;Clique Aqui&lt;/button&gt;
+</code>
+        </pre>
+      </div>
+
+      <div>
+        <h2>Exemplo Completo (HTML, CSS e JS)</h2>
+        <p>Agora, vamos juntar tudo o que aprendemos:</p>
+        <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Meu site interativo&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        background-color: #e8f5e9;
+        text-align: center;
+      }
+      button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao meu site interativo!&lt;/h1&gt;
+    &lt;button onclick="alert('Você clicou no botão!')"&gt;Clique Aqui&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+        </pre>
+      </div>
+
+      <button onclick="mostrarPagina(4)">Ir para prática</button>
+    </section>
+
+    <!-- Página 4: Prática -->
+    <section id="pagina4">
+      <h1>Pratique aqui o que você aprendeu!</h1>
+      <textarea id="editor" placeholder="Escreva seu código HTML, CSS ou JS aqui..."></textarea>
+      <button onclick="executarCodigo()">Executar</button>
+      <h2>Resultado:</h2>
+      <iframe id="resultado"></iframe>
+    </section>
+  </main>
+
+  <script>
+    // Função para exibir a página atual e esconder as outras
+    function mostrarPagina(numero) {
+      const secoes = document.querySelectorAll('section');
+      secoes.forEach(secao => secao.classList.remove('active'));  // Remove a classe "active" de todas as páginas
+      document.getElementById('pagina' + numero).classList.add('active');  // Adiciona a classe "active" à página atual
+    }
+
+    // Função para salvar o nome e ir para a página 3 (Aulas)
+    function salvarNome() {
+      const nome = document.getElementById('nome').value.trim();
+      if (!nome) {
+        alert("Por favor, digite seu nome.");
+        return;
+      }
+      localStorage.setItem('nomeUsuario', nome);  // Salva o nome do usuário
+      mostrarPagina(3);  // Vai para a página de Aulas
+    }
+
+    // Função para executar o código inserido no editor
+    function executarCodigo() {
+      const code = document.getElementById("editor").value;
+      const frame = document.getElementById("resultado");
+      frame.srcdoc = code;
+    }
+
+    // Função para alterar o tamanho da fonte na página inicial
+    let fontSize = 16; // Tamanho inicial da fonte
+
+    function alterarFonte(acao) {
+      if (acao === 'aumentar') {
+        fontSize += 2;
+      } else if (acao === 'diminuir') {
+        fontSize -= 2;
+      }
+      document.body.style.fontSize = fontSize + 'px'; // Aplica o novo tamanho de fonte
+    }
+
+    // Função que garante que a página inicial será carregada primeiro
+    window.addEventListener('load', () => {
+      if (localStorage.getItem('nomeUsuario')) {
+        mostrarPagina(3);  // Se o nome foi salvo, vai direto para a página de Aulas
+      } else {
+        mostrarPagina(1);  // Caso contrário, mantém na página 1
+      }
+    });
+  </script>
+</body>
+</html>
