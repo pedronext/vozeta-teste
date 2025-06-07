@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VOZETA - Inclusão na Programação</title>
   <style>
     body {
@@ -86,6 +87,63 @@
     /* Estilo dos controles de fonte */
     .font-controls {
       margin-top: 20px;
+    }
+
+    /* Responsividade para telas pequenas */
+    @media (max-width: 768px) {
+      main {
+        padding: 15px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      input, textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      h1, h2 {
+        font-size: 1.5rem;
+      }
+
+      iframe {
+        height: 250px;
+      }
+    }
+
+    /* Estilos para telas muito pequenas, como celulares em modo retrato */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .font-controls button {
+        font-size: 0.8rem;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+      }
+
+      input, textarea {
+        font-size: 0.9rem;
+      }
+
+      iframe {
+        height: 200px;
+      }
+
+      .centered {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -242,18 +300,6 @@ h1 {
       frame.srcdoc = code;
     }
 
-    // Função para alterar o tamanho da fonte na página inicial
-    let fontSize = 16; // Tamanho inicial da fonte
-
-    function alterarFonte(acao) {
-      if (acao === 'aumentar') {
-        fontSize += 2;
-      } else if (acao === 'diminuir') {
-        fontSize -= 2;
-      }
-      document.body.style.fontSize = fontSize + 'px'; // Aplica o novo tamanho de fonte
-    }
-
     // Função que garante que a página inicial será carregada primeiro
     window.addEventListener('load', () => {
       if (localStorage.getItem('nomeUsuario')) {
@@ -262,6 +308,17 @@ h1 {
         mostrarPagina(1);  // Caso contrário, mantém na página 1
       }
     });
+
+    // Função para alterar o tamanho da fonte na página inicial
+    let fontSize = 16; // Tamanho inicial da fonte
+    function alterarFonte(acao) {
+      if (acao === 'aumentar') {
+        fontSize += 2;
+      } else if (acao === 'diminuir') {
+        fontSize -= 2;
+      }
+      document.body.style.fontSize = fontSize + 'px'; // Aplica o novo tamanho de fonte
+    }
   </script>
 </body>
 </html>
